@@ -1,0 +1,362 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+    font-size: 10px;
+    background: hsl(180, 52%, 96%);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    width: 100vw;
+    height: 15vh;
+    position: relative;
+    background: hsl(180, 29%, 50%);
+}
+
+header img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.filter-box {
+    position: absolute;
+    top: 12vh;
+    left: 50%;
+    width: 80%;
+    transform: translate(-50%,0);
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.2);
+    border-radius: .7rem;
+    background: white;
+}
+
+.filter-box .wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 2rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(8,minmax(4rem,max-content));
+    grid-gap: 1rem;
+}
+
+.categories .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: hsl(180, 53%, 93%);
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.box .name {
+    color: hsl(180, 29%, 50%);
+    font-weight: 500;
+    padding: .5rem .7rem;
+}
+
+.box .delete {
+    padding: .5rem .8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: hsl(180, 29%, 50%);
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background .4s;
+}
+
+.box .delete:hover {
+    background: hsl(180, 14%, 20%);
+}
+
+.filter-box .wrapper .clear {
+    color: hsl(180, 29%, 50%);
+    position: relative;
+    cursor: pointer;
+}
+
+.filter-box .wrapper .clear::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: .1rem;
+    background: hsl(180, 29%, 50%);
+    transform: scale(0);
+    transform-origin: right;
+    transition: transform .5s;
+}
+
+.filter-box .wrapper .clear:hover::after {
+    transform: scale(1);
+    transform-origin: left;
+}
+
+section.main-content {
+    width: 100%;
+    padding: 7.5rem 0 4rem;
+}
+
+.content-wrapper {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.listings {
+    width: 100%;
+    height: 100%;
+}
+
+.listings li.job-item {
+    padding: 2rem 4rem;
+    border-radius: .7rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.2);
+    background: white;
+    margin-bottom: 2rem;
+}
+
+.featured {
+    border-left: 5px solid hsl(180, 29%, 50%);
+}
+
+.job-item .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.job-type {
+    display: flex;
+    align-items: center;
+}
+
+.job-type .img-wrapper {
+    margin-right: 2rem;
+    width: 5rem;
+    height: 5rem;
+}
+
+.job-type .img-wrapper img {
+    width: 100%;
+    height: 100%;
+}
+
+.descriptions .top {
+    display: flex;
+    align-items: center;
+    margin-bottom: .6rem;
+}
+
+.descriptions .top p {
+    margin-right: .5rem;
+}
+
+.descriptions .top .title {
+    color: hsl(180, 59%, 44%);
+    font-weight: 500;
+}
+
+.descriptions .top .new {
+    color: white;
+    background: hsl(180, 59%, 44%);
+    padding: .5rem .5rem .3rem;
+    border-radius: 1.5rem;
+}
+
+.descriptions .top .feat {
+    color: white;
+    background: hsl(180, 14%, 20%);
+    padding: .5rem .5rem .3rem;
+    border-radius: 1.5rem;
+}
+
+.descriptions .middle {
+    color: hsl(180, 59%, 44%);
+    font-weight: 800;
+    margin-bottom: .6rem;
+    cursor: pointer;
+}
+
+.descriptions .bottom span {
+    color: rgba(0,0,0,.6);
+    margin-right: 1rem;
+}
+
+.job-item .other ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.job-item .other ul li {
+    margin-right: 1.4rem;
+    background: hsl(180, 52%, 96%);
+    color: hsl(180, 59%, 44%);
+    padding: .6rem;
+    border-radius: .5rem;
+    transition: background .4s, color .4s;
+    cursor: pointer;
+}
+
+.other ul li:hover {
+    background: hsl(180, 59%, 44%);
+    color: white;
+}
+
+.attribution {
+    text-align: center;
+    padding: 1rem;
+}
+
+.attribution a {
+    color: rgba(0,0,0,.5);
+    position: relative;
+    transition: .4s;
+}
+
+.attribution a:hover {
+    color: rgba(0,0,0,1);
+}
+
+.attribution a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: .1rem;
+    background: #000;
+    transform-origin: right;
+    transform: scale(0);
+    transition: transform .4s;
+}
+
+.attribution a:hover::after {
+    transform: scale(1);
+    transform-origin: left;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1150px) {
+    .listings li.job-item {
+        padding: 1.5rem 2rem;
+    }
+
+    .categories {
+        grid-template-columns: repeat(5,minmax(5rem,max-content));
+        /* align-items: center; */
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .listings {
+        width: 70%;
+    }
+
+    .job-item .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .job-type {
+        border-bottom: 1px solid rgba(0,0,0,.1);
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .categories {
+        display: grid;
+        grid-template-columns: repeat(4,minmax(6rem,max-content));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .categories {
+        display: grid;
+        grid-row-gap: 1rem;
+        grid-template-columns: repeat(2,minmax(6rem,min-content));
+    }
+    
+    section.main-content {
+        padding-top: 13rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .listings {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .content-wrapper {
+        width: 90%;
+    }
+
+    .listings li.job-item {
+        position: relative;
+        padding: 2.5rem 1rem 1.5rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .job-item .img-wrapper {
+        width: 4rem;
+        height: 4rem;
+        margin-right: 0;
+        position: absolute;
+        left: 1rem;
+        top: -2rem;
+    }
+
+    .descriptions .top,
+    .descriptions .middle {
+        margin-bottom: 1rem;
+    }
+
+    .descriptions .bottom span {
+        margin-right: .5rem;
+    }
+
+    .job-item .other ul li {
+        margin-bottom: .5rem;
+    }
+}
+
+@media screen and (max-width: 435px) {
+    .categories {
+        display: grid;
+        grid-row-gap: 1rem;
+        grid-template-columns: repeat(1,minmax(6rem,min-content));
+    }
+
+}
